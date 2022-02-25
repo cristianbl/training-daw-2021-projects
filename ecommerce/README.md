@@ -63,13 +63,16 @@ La aplicación web será capaz de funcionar tanto con el API de pruebas como con
 
 
 ### Back-End
-* API REST desarrollada .Net Core 3.1
-* Publicación de la API en un App Service de Azure desde donde se expondrá la API al front-end
+* API REST desarrollada .Net Core 3.1, 5.0 o 6.0
+* Entrega mediante acceso al proyecto en GitHub 
 * Documentación de la API bajo es estándar OpenApi mediante Swagger. Deberá permitir poder importar la API como colección en Postman para ser testeada, así como exponer un interfaz que permita interactuar con la API directamente desde el navegador Web.
 * Utilización de SQLite como gestor de BD y estrategia "Code First" mediante el uso de migraciones para la creación del modelo en BD.
-* Validaciones de los datos en 
-Respuestas de la API Control de errores
-
+* Validaciones de los datos. 
+* Respuestas de la API encapsuladas junto con el status code adecuado, es decir:
+   *  200 si todo correcto 
+   *  204 si todo correcto pero no se devuleven datos
+   *  400 si ocurre un error de validación de datos
+   *  404 si todo correcto pero no encuentra datos
 
 ## Bonus
 
@@ -111,11 +114,12 @@ Ejemplos: 130 ptos sería un 10, 90 ptos sería un 6,9 y 70 ptos un 5,3.
     * 10 ptos - Utilización de vue-bootstrap
     * 30 ptos - Utilización de Vuex
 
-
-
-### Back-End (9 puntos + 1 puntos de bonus)
-* 1 pt - Entrega respetando formatos
-* 1 pt - Publicación correcta sobre Azure App Service.
-* 1 pt - Revisión de código. Correcto uso de [convenciones de nomenclatura](https://docs.microsoft.com/es-es/dotnet/standard/design-guidelines/naming-guidelines), al menos en nombres de clases, interface, variables, metodos y parametros, y uso de [buenas practicas](https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
-* 6 pt - Implementación de Swagger y correcto funcionamiento de todos los métodos expuestos desde swaggwer. En caso de **no estar publicada la API en Azure y no compilar el código** o **no implementar swagger**, y por lo tanto no poder probar, este punto no se evaluará y serán **0 puntos**.
-* 1 pt - Bonus implementar el patrón de diseño UnitOfWork y Repository para el acceso a datos.
+### Back-End (90 puntos + 10 puntos de bonus)
+* 10 puntos - Entrega respetando formatos
+* 10 puntos - Publicación correcta sobre Azure App Service.
+* 10 puntos - Revisión de código. Correcto uso de [convenciones de nomenclatura](https://docs.microsoft.com/es-es/dotnet/standard/design-guidelines/naming-guidelines), al menos en nombres de clases, interface, variables, metodos y parametros, y uso de [buenas practicas](https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
+* 60 pt - Implementación de Swagger y correcto funcionamiento de todos los métodos expuestos desde swaggwer. En caso de **no estar publicada la API en Azure y no compilar el código** o **no implementar swagger**, y por lo tanto no poder probar, este punto no se evaluará y serán **0 puntos**.
+   * Controlador Productos con las operaciones CRUD, obtener todos los productos, obtener producto por id y obtener todos los productos de una categoría.
+   * Controlador Categorias con las operaciones CRUD, obtener todos las categorías y obtener categoría por id
+   * Controlador Carrito con las operaciones: añadir producto, borrar producto, modificar cantidad del producto, vaciar carrito.
+* 10 pt - Bonus implementar el patrón de diseño Repository para el acceso a datos.
