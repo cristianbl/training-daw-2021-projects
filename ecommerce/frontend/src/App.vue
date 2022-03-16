@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/cart">Carrito</router-link>
+      <router-link to="/cart">Carrito</router-link> |
+      <router-link to="/productdetail"> Detalle de Producto</router-link>
     </div>
     <h1 v-if="isMock">Working with MOCK data</h1>
     <router-view/>
