@@ -1,11 +1,12 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <div>
+    <div class = "card" style="display: flex; flex-wrap:wrap; justify-content: center; gap:12px" >
         <ProductCard
         v-for="item in items"
         :key = "item.id"
-        :item="item" />
+        :item="item" style="width:26%;  border: 1px solid black">
+        </ProductCard>
     </div>
   </div>
 </template>
