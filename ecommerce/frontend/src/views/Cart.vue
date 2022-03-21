@@ -1,24 +1,27 @@
 <template>
     <div>
+
         <h1>Carrito</h1>
-        <Cart
+        
+        <Carrito
         v-for="orderProduct in cart"
         :key="orderProduct.id"
         :item='orderProduct.item'
         :quantity='orderProduct.quantity'
         >
-        </Cart>
+        </Carrito> 
         <h1> </h1>
     </div>
 </template>
 
 <script>
 
+import Carrito from '../components/Carrito.vue'
 
 export default {
     name:'Cart',
     components:{
-        Cart
+        Carrito
     },
     data(){
         return {

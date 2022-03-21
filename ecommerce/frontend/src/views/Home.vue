@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <div class = "card" style="display: flex; flex-wrap:wrap; justify-content: center; gap:12px" >
+    <div class = "card" style="display: flex; flex-wrap:wrap; flex-direction: initial; justify-content: center; gap:12px" >
         <ProductCard
         v-for="item in items"
         :key = "item.id"

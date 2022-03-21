@@ -7,8 +7,12 @@
         
          <h1>{{item.name}}</h1>
           <p>{{item.description}}</p>
-          <p>{{item.price}}</p>
+          <p>Price: {{item.price}}$</p>
+          <router-link :to="{name: 'Home'}">
+        <button>Volver</button>
+      </router-link>    
           <button @click="add()">Añadir Carrito</button>
+          
           
           
       </div>
@@ -77,7 +81,7 @@ export default {
         getProductFromCart(id){
           let data = fetch('http://localhost:3000/cart')
             .then(response=> response.json())
-            .then(data=> data.filter(item=> item.item.id == id))
+            .then(data=> data.filter(item => item.item.id == id))
             .then(data=> {
                 if(data.length > 0){
                     return data[0]
